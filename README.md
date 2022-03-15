@@ -1,0 +1,1 @@
+fancky-spring-boot-starter
