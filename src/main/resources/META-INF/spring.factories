@@ -1,0 +1,3 @@
+#????????????ComponentScan ??
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.example.fanckyspringbootstarter.config.FanckyAutoConfiguration

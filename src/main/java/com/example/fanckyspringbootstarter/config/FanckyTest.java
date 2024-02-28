@@ -14,12 +14,12 @@ import org.springframework.stereotype.Component;
 解决：启动类添加@EnableConfigurationProperties
  */
 @Data
-//@Configuration//不能用@Configuration，不然依赖项目找不到该类
-@Component
-@ConfigurationProperties(prefix = "spring.fanckytest")//配置必须全部小写
+//@Configuration//不能用@Configuration，不然依赖项目找不到该类,需要@EnableConfigurationProperties
+//@Component
+@ConfigurationProperties(prefix = "fanckytest")//配置必须全部小写
 //引用module报异常
 //@ConditionalOnProperty(value = "spring.fanckytest", havingValue = "true")
 public class FanckyTest {
-    private String host;
-    private String port;
+    private String host="127.0.0.1";
+    private String port="8888";
 }
