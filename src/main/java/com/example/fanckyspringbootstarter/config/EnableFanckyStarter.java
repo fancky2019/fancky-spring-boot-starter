@@ -1,13 +1,19 @@
 package com.example.fanckyspringbootstarter.config;
 
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.stereotype.Component;
 
 import java.lang.annotation.*;
 
 /**
  *
  * Spring Boot Starter 主要作用是简化项目的依赖管理和配置。
+ *
+ * springboot:@SpringBootApplication
+ * -->@EnableAutoConfiguration
+ * -->@Import({AutoConfigurationImportSelector.class}) 3. AutoConfigurationImportSelector 读取 spring.factories
  *
  *
  * 手动开启型 starter
@@ -32,6 +38,19 @@ import java.lang.annotation.*;
  * 2、添加插件 maven-source-plugin，见pom
  *
  *
+ *
+ * @Import：
+ * // 1. 导入普通类（没有 @Configuration）
+ * @Import(NormalClass.class) // 只会导入这个类本身
+ *
+ * // 2. 导入配置类（有 @Configuration）
+ * @Import(ConfigClass.class) // 会解析该类及其 @Bean 方法
+ *
+ * // 3. 导入 ImportSelector
+ * @Import(MyImportSelector.class) // 执行 selectImports 方法
+ *
+ * // 4. 导入 ImportBeanDefinitionRegistrar
+ * @Import(MyRegistrar.class) // 执行 registerBeanDefinitions 方法
  */
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
