@@ -16,6 +16,29 @@ import org.springframework.context.annotation.Configuration;
 
 
 /**
+ *
+ * Spring Boot 2.x
+ *
+ * resources/META-INF/spring.factories
+ *
+ * org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+ * com.xxx.FanckyAutoConfiguration
+ * Spring Boot 3.x
+ *
+ * resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports
+ *
+ * com.xxx.FanckyAutoConfiguration
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
  * @Configuration // 指定这个类是个配置类
  * @ConditionalOnXXX // 在指定条件成立的情况下自动配置类生效
  * @AutoConfigureOrder //配置类顺序
